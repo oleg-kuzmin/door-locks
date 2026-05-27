@@ -1,0 +1,10 @@
+@use '/src/shared/mixins' as *;
+
+.app {
+  @include media-initial {
+    color: blue;
+  }
+  @include media-desktop {
+    color: red;
+  }
+}
