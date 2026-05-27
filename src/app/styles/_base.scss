@@ -1,1 +1,32 @@
+:root {
+  // Figma Colors
+  --color-white: #fff;
+  --color-black: #161c24;
+  --color-light-grey: #c4cdd5;
+  --color-grey: #454f5b;
+  --color-stroke: #eaeaea;
+  --color-primary: #00999e;
+  --color-main: #4295e4;
+  --color-light-blue: #add7ff;
+  --color-red: #e44286;
+  --color-text-disable: #adadad;
+  --color-bg-light: #f2f8ff;
 
+  // Scrollbar Colors
+  --color-scrollbar: var(--color-main);
+  --color-track: rgba(255, 255, 255, 0.1);
+
+  // Fonts
+  --font-fallback: 'Helvetica', 'Arial', sans-serif;
+  --font-sf-pro-text: 'SF Pro Text', var(--font-fallback);
+  --font-sf-pro-display: 'SF Pro Display', var(--font-fallback);
+  --font-roboto: 'Roboto', var(--font-fallback);
+  --font-helvetica-neue-cyr: 'HelveticaNeueCyr', var(--font-fallback);
+
+  // Smoothing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
