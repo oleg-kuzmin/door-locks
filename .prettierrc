@@ -22,6 +22,7 @@
   "arrowParens": "avoid",
   "bracketSameLine": true,
   "bracketSpacing": true,
+  "htmlWhitespaceSensitivity": "ignore",
   "jsxSingleQuote": false,
   "printWidth": 100,
   "proseWrap": "preserve",
