@@ -1,12 +1,9 @@
-import cn from 'classnames';
-import styles from './HomePage.module.scss';
+import { Header } from '@/shared/ui';
 
-interface HomePageProps {
-  className?: string;
-}
-
-export function HomePage({ className }: Readonly<HomePageProps>) {
+export function HomePage() {
   return (
-    <div className={cn(styles.homePage, className)}>HomePage</div>
+    <>
+      <Header />
+    </>
   );
 }
