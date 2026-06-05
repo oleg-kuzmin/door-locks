@@ -1,0 +1,10 @@
+@use '/src/shared/mixins' as *;
+
+.linkCallForm {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 4px;
+  @include font-sf-pro-display-medium(16px, 163%, 0.12em);
+  @include effect-hover-color-main;
+  @include effect-focus-outline-main;
+}

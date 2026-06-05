@@ -1,0 +1,15 @@
+@mixin effect-hover-color-main {
+  @media screen and (hover: hover) {
+    transition: color var(--time-hover-main);
+    &:hover {
+      color: var(--color-main);
+    }
+  }
+}
+
+@mixin effect-focus-outline-main {
+  &:focus-visible {
+    border-radius: var(--border-radius-small);
+    outline: var(--color-main) var(--border-width-main) solid;
+  }
+}

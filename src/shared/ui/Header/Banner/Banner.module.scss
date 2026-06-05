@@ -3,8 +3,8 @@
 .banner {
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: var(--color-grey);
+  color: var(--color-white);
   @include media-initial {
     min-height: 36px;
   }
@@ -12,16 +12,33 @@
     min-height: 44px;
   }
 
+  &__content {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__text {
-    padding: 8px;
-    color: var(--color-white);
+    padding: 8px 0;
     text-align: center;
     @include media-initial {
       @include font-sf-pro-display-regular(12px, 100%, 0.02em);
     }
     @include media-laptop {
-      max-width: calc(100% - 25vw); // max-width: calc(100% - 350px);
+      max-width: calc(100% - 350px);
       @include font-sf-pro-display-medium(16px, 163%, 0.12em);
+    }
+  }
+
+  &__linkCallForm {
+    position: absolute;
+    right: 0;
+    @include media-initial {
+      display: none;
+    }
+    @include media-laptop {
+      display: revert;
     }
   }
 }

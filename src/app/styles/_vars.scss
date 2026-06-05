@@ -22,4 +22,12 @@
   --font-sf-pro-display: 'SF Pro Display', var(--font-fallback);
   --font-roboto: 'Roboto', var(--font-fallback);
   --font-helvetica-neue-cyr: 'HelveticaNeueCyr', var(--font-fallback);
+
+  // Times
+  --time-hover-main: 300ms;
+
+  // Border
+  --border-width-main: 2px;
+  --border-radius-small: 5px;
+  --border-radius-main: 10px;
 }
