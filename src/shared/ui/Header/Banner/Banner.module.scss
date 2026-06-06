@@ -5,6 +5,7 @@
   align-items: center;
   background-color: var(--color-grey);
   color: var(--color-white);
+
   @include media-initial {
     min-height: 36px;
   }
@@ -22,6 +23,7 @@
   &__text {
     padding: 8px 0;
     text-align: center;
+
     @include media-initial {
       @include font-sf-pro-display-regular(12px, 100%, 0.02em);
     }
@@ -34,6 +36,9 @@
   &__linkCallForm {
     position: absolute;
     right: 0;
+    @include effect-hover-color-main;
+    @include effect-focus-outline-main;
+
     @include media-initial {
       display: none;
     }
