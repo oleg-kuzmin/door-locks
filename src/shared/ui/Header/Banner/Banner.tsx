@@ -1,6 +1,5 @@
 import cn from 'classnames';
-import { Content } from '@/shared/ui';
-import { LinkCallForm } from '../LinkCallForm/LinkCallForm';
+import { Content, LinkCallForm } from '@/shared/ui';
 import styles from './Banner.module.scss';
 
 interface BannerProps {
