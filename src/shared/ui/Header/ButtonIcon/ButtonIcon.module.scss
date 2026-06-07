@@ -1,0 +1,45 @@
+@use '/src/shared/mixins' as *;
+
+.buttonIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  @include effect-hover-two-icons;
+  @include effect-focus-outline-main;
+
+  &_cart {
+    &::before {
+      background-image: url('/icons/cart-grey.svg');
+    }
+    &::after {
+      background-image: url('/icons/cart-main.svg');
+    }
+  }
+
+  &_like {
+    &::before {
+      background-image: url('/icons/like-grey.svg');
+    }
+    &::after {
+      background-image: url('/icons/like-main.svg');
+    }
+  }
+
+  &__counter {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    transform: translateZ(0);
+    border-radius: 100%;
+    outline: 1px solid var(--color-white);
+    background-color: var(--color-main);
+    color: var(--color-white);
+    text-align: center;
+    @include font-roboto-medium(1.2rem, 100%);
+  }
+}

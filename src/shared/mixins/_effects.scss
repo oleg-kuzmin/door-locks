@@ -11,6 +11,47 @@
   &:focus-visible {
     border-radius: var(--border-radius-small);
     outline: var(--color-main) var(--border-width-main) solid;
-    outline-offset: 2px;
+    outline-offset: var(--outline-offset);
+  }
+}
+
+@mixin effect-hover-two-icons {
+  position: relative;
+  &::before,
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+  }
+  &::before {
+    visibility: visible;
+    opacity: 1;
+  }
+  &::after {
+    visibility: hidden;
+    opacity: 0;
+  }
+  @media screen and (hover: hover) {
+    &::before,
+    &::after {
+      transition:
+        visibility var(--time-hover-main),
+        opacity var(--time-hover-main);
+    }
+    &:hover {
+      &::before {
+        visibility: hidden;
+        opacity: 0;
+      }
+      &::after {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
   }
 }
