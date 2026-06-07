@@ -5,12 +5,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: .5rem;
   @include effect-focus-outline-main;
 
   &__line {
-    width: 24px;
-    height: 3px;
+    width: 2.4rem;
+    height: .3rem;
     border-radius: var(--border-radius-small);
     background-color: var(--color-black);
 

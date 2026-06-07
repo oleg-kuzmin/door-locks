@@ -9,12 +9,12 @@
 
     @include media-initial {
       justify-content: space-between;
-      min-height: 70px;
+      min-height: 7rem;
     }
 
     @include media-laptop {
       justify-content: flex-start;
-      min-height: 82px;
+      min-height: 8.2rem;
     }
   }
 

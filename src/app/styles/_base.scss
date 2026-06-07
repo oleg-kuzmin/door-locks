@@ -12,7 +12,7 @@
 }
 
 body {
-  max-width: 2560px;
+  max-width: 256rem;
   margin: 0 auto;
   background-color: var(--color-white);
   color: var(--color-black);
@@ -20,6 +20,7 @@ body {
 }
 
 html {
+  font-size: 62.5%;
   scroll-behavior: smooth;
   scrollbar-color: var(--color-scrollbar) var(--color-track);
   scrollbar-width: thin;

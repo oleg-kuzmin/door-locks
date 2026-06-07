@@ -3,6 +3,6 @@
 .linkCallForm {
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  text-underline-offset: 4px;
-  @include font-sf-pro-display-medium(16px, 163%, 0.12em);
+  text-underline-offset: 0.4rem;
+  @include font-sf-pro-display-medium(1.6rem, 163%, 0.12em);
 }

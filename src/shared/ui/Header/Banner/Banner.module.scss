@@ -7,11 +7,11 @@
   color: var(--color-white);
 
   @include media-initial {
-    min-height: 36px;
+    min-height: 3.6rem;
   }
 
   @include media-laptop {
-    min-height: 44px;
+    min-height: 4.4rem;
   }
 
   &__content {
@@ -22,16 +22,16 @@
   }
 
   &__text {
-    padding: 8px 0;
+    padding: 0.8rem 0;
     text-align: center;
 
     @include media-initial {
-      @include font-sf-pro-display-regular(12px, 100%, 0.02em);
+      @include font-sf-pro-display-regular(1.2rem, 100%, 0.02em);
     }
 
     @include media-laptop {
-      max-width: calc(100% - 350px);
-      @include font-sf-pro-display-medium(16px, 163%, 0.12em);
+      max-width: calc(100% - 35rem);
+      @include font-sf-pro-display-medium(1.6rem, 163%, 0.12em);
     }
   }
 
@@ -44,7 +44,7 @@
     @include media-initial {
       display: none;
     }
-    
+
     @include media-laptop {
       display: revert;
     }
