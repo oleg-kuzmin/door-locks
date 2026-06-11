@@ -24,8 +24,10 @@ export function Header({ className }: Readonly<HeaderProps>) {
           isOpen={isOpenMobileNavPanel}
           onClick={() => setIsOpenMobileNavPanel(isOpen => !isOpen)}
         />
-        <ButtonIcon type="like" onClick={() => alert('Open modal Favorite')} counter={8} />
-        <ButtonIcon type="cart" onClick={() => alert('Open modal Cart')} counter={10} />
+        <div className={styles.header__buttonIcons}>
+          <ButtonIcon type="like" onClick={() => alert('Open modal Favorite')} counter={8} />
+          <ButtonIcon type="cart" onClick={() => alert('Open modal Cart')} counter={10} />
+        </div>
       </Content>
     </header>
   );

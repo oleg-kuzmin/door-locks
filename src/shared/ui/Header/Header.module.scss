@@ -6,14 +6,13 @@
   &__content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     @include media-initial {
-      justify-content: space-between;
       min-height: 7rem;
     }
 
     @include media-laptop {
-      justify-content: flex-start;
       min-height: 8.2rem;
     }
   }
@@ -21,6 +20,18 @@
   &__buttonMobileNavPanel {
     @include media-laptop {
       display: none;
+    }
+  }
+
+  &__buttonIcons {
+    display: flex;
+
+    @include media-initial {
+      gap: 1.6rem;
+    }
+
+    @include media-laptop {
+      gap: 2.4rem;
     }
   }
 }
