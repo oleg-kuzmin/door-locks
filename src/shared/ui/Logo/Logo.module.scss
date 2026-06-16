@@ -1,0 +1,13 @@
+@use '/src/shared/mixins' as *;
+
+.logo {
+  display: inline-block;
+  @include effect-focus-outline-main;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    vertical-align: top;
+  }
+}

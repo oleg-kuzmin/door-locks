@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import cn from 'classnames';
-import { Content } from '@/shared/ui';
+import { Content, Logo } from '@/shared/ui';
 import { Banner } from './Banner/Banner';
 import { ButtonIcon } from './ButtonIcon/ButtonIcon';
 import { ButtonMobileNavPanel } from './ButtonMobileNavPanel/ButtonMobileNavPanel';
@@ -24,6 +24,7 @@ export function Header({ className }: Readonly<HeaderProps>) {
           isOpen={isOpenMobileNavPanel}
           onClick={() => setIsOpenMobileNavPanel(isOpen => !isOpen)}
         />
+        <Logo className={styles.header__logo} />
         <div className={styles.header__buttonIcons}>
           <ButtonIcon type="like" onClick={() => alert('Open modal Favorite')} counter={8} />
           <ButtonIcon type="cart" onClick={() => alert('Open modal Cart')} counter={10} />
