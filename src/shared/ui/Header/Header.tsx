@@ -4,6 +4,7 @@ import { Content, Logo } from '@/shared/ui';
 import { Banner } from './Banner/Banner';
 import { ButtonIcon } from './ButtonIcon/ButtonIcon';
 import { ButtonMobileNavPanel } from './ButtonMobileNavPanel/ButtonMobileNavPanel';
+import { DesktopNav } from './DesktopNav/DesktopNav';
 import { HiddenHeading } from './HiddenHeading/HiddenHeading';
 import styles from './Header.module.scss';
 
@@ -25,6 +26,7 @@ export function Header({ className }: Readonly<HeaderProps>) {
           onClick={() => setIsOpenMobileNavPanel(isOpen => !isOpen)}
         />
         <Logo className={styles.header__logo} />
+        <DesktopNav className={styles.header__desktopNav} />
         <div className={styles.header__buttonIcons}>
           <ButtonIcon type="like" onClick={() => alert('Open modal Favorite')} counter={8} />
           <ButtonIcon type="cart" onClick={() => alert('Open modal Cart')} counter={10} />

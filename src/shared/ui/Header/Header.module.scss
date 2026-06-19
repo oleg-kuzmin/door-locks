@@ -36,6 +36,16 @@
     }
   }
 
+  &__desktopNav {
+    @include media-initial {
+      display: none;
+    }
+
+    @include media-laptop {
+      display: revert;
+    }
+  }
+
   &__buttonIcons {
     display: flex;
 

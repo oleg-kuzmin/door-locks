@@ -1,0 +1,35 @@
+@use '/src/shared/mixins' as *;
+
+.desktopNav {
+  &__list {
+    display: flex;
+    gap: 3.2rem;
+  }
+}
+
+.navElement {
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    @include font-sf-pro-text-light(2rem);
+    @include effect-hover-color-main;
+    @include effect-focus-outline-main;
+  }
+}
+
+.catalogArrow {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url('/icons/desktop-nav-element-arrow-black.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: rotate var(--time-hover-main);
+
+  &_isOpen {
+    rotate: 180deg;
+    background-image: url('/icons/desktop-nav-element-arrow-main.svg');
+  }
+}
