@@ -7,14 +7,14 @@ interface DesktopNavProps {
 }
 
 export function DesktopNav({ className }: Readonly<DesktopNavProps>) {
-  const [isOpenCatalogPanel, setIsOpenCatalogPanel] = useState(false);
+  const [isOpenCatalog, setIsOpenCatalog] = useState(false);
 
   function handleOpenCatalog() {
-    setIsOpenCatalogPanel(true);
+    setIsOpenCatalog(true);
   }
 
   function handleCloseCatalog() {
-    setIsOpenCatalogPanel(false);
+    setIsOpenCatalog(false);
   }
 
   return (
@@ -23,7 +23,7 @@ export function DesktopNav({ className }: Readonly<DesktopNavProps>) {
         <NavElement to="/" onActive={handleCloseCatalog}>
           Главная
         </NavElement>
-        <CatalogNavElement to="/catalog" onActive={handleOpenCatalog} isOpen={isOpenCatalogPanel}>
+        <CatalogNavElement to="/catalog" onActive={handleOpenCatalog} isOpen={isOpenCatalog}>
           Каталог
         </CatalogNavElement>
         <NavElement to="/wholesale" onActive={handleCloseCatalog}>
