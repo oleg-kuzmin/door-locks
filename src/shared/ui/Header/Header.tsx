@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { Content, Logo } from '@/shared/ui';
 import { Banner } from './Banner/Banner';
 import { ButtonIcon } from './ButtonIcon/ButtonIcon';
-import { ButtonMobileNavPanel } from './ButtonMobileNavPanel/ButtonMobileNavPanel';
+import { ButtonMobileNav } from './ButtonMobileNav/ButtonMobileNav';
 import { DesktopNav } from './DesktopNav/DesktopNav';
 import { HiddenHeading } from './HiddenHeading/HiddenHeading';
 import styles from './Header.module.scss';
@@ -13,17 +13,17 @@ interface HeaderProps {
 }
 
 export function Header({ className }: Readonly<HeaderProps>) {
-  const [isOpenMobileNavPanel, setIsOpenMobileNavPanel] = useState(false);
+  const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
 
   return (
     <header className={cn(styles.header, className)}>
       <HiddenHeading>Golden Soft</HiddenHeading>
       <Banner>Скидка 10% по промокоду “ZAMOK” на все заказы до 10.09</Banner>
       <Content className={styles.header__content}>
-        <ButtonMobileNavPanel
-          className={styles.header__buttonMobileNavPanel}
-          isOpen={isOpenMobileNavPanel}
-          onClick={() => setIsOpenMobileNavPanel(isOpen => !isOpen)}
+        <ButtonMobileNav
+          className={styles.header__buttonMobileNav}
+          isOpen={isOpenMobileNav}
+          onClick={() => setIsOpenMobileNav(isOpen => !isOpen)}
         />
         <Logo className={styles.header__logo} />
         <DesktopNav className={styles.header__desktopNav} />
