@@ -1,0 +1,36 @@
+@use '/src/shared/mixins' as *;
+
+.linkPhone {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--grey);
+  @include effect-hover-color-main;
+  @include effect-focus-outline-main;
+
+  @include media-initial {
+    @include font-sf-pro-display-regular(1.4rem);
+  }
+
+  @include media-desktop {
+    @include font-sf-pro-display-regular(1.8rem);
+  }
+
+  &:before {
+    background-image: url('/public/icons/phone-main.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+
+    @include media-initial {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+
+    @include media-desktop {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

@@ -49,6 +49,17 @@
     }
   }
 
+  &__linkPhone {
+    @include media-initial {
+      display: none;
+    }
+
+    @include media-desktop {
+      display: flex;
+      margin-right: 3.3rem;
+    }
+  }
+
   &__buttonIcons {
     display: flex;
 
