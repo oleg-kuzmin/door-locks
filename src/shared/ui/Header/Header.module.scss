@@ -13,6 +13,7 @@
     }
 
     @include media-laptop {
+      justify-content: flex-start;
       min-height: 8.2rem;
     }
   }
@@ -33,6 +34,7 @@
 
     @include media-laptop {
       display: inline-block;
+      margin-right: 10.2rem;
     }
   }
 
@@ -43,6 +45,7 @@
 
     @include media-laptop {
       display: revert;
+      margin-right: auto;
     }
   }
 
