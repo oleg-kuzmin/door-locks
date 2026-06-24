@@ -1,0 +1,44 @@
+@use '/src/shared/mixins' as *;
+
+.mobileNav {
+  width: 100%;
+  padding: 2.5rem 1.6rem 0;
+  border-right: 0.1rem solid var(--color-black);
+  border-bottom: 0.1rem solid var(--color-black);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: rgba($color: var(--color-white), $alpha: 0.9);
+  box-shadow:
+    0.2rem 0.2rem 0.8rem var(--color-black),
+    -0.2rem -0.2rem 0.8rem var(--color-black);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+}
+
+.navElement {
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--color-stroke);
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-16-reg-16_26;
+    @include effect-hover-color-main;
+    @include effect-focus-outline-main;
+  }
+}
+
+.catalogArrow {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url('/icons/mobile-nav-element-arrow-black.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
