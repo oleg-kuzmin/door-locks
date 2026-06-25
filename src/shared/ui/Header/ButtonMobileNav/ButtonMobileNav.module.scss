@@ -16,12 +16,12 @@
 
     &:nth-child(1) {
       transform-origin: top left;
-      transition: transform var(--time-animate-button-mobile-nav-panel) ease-out;
+      transition: transform var(--time-animate-button-mobile-nav) ease-out;
     }
 
     &:nth-child(3) {
       transform-origin: bottom left;
-      transition: transform var(--time-animate-button-mobile-nav-panel) ease-out;
+      transition: transform var(--time-animate-button-mobile-nav) ease-out;
     }
 
     &_active {

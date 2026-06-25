@@ -36,7 +36,7 @@ export function Header({ className }: Readonly<HeaderProps>) {
             <ButtonIcon type="cart" onClick={() => alert('Open modal Cart')} counter={10} />
           </div>
         </Content>
-        <MobileNav className={styles.header__mobileNav} />
+        <MobileNav className={styles.header__mobileNav} isOpen={isOpenMobileNav} />
       </header>
     </>
   );

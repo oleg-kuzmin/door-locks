@@ -1,21 +1,35 @@
+import { useRef } from 'react';
 import { Link } from 'react-router';
+import { CSSTransition } from 'react-transition-group';
 import cn from 'classnames';
 import styles from './MobileNav.module.scss';
 
 interface MobileNavProps {
+  isOpen: boolean;
   className?: string;
 }
 
-export function MobileNav({ className }: Readonly<MobileNavProps>) {
+export function MobileNav({ isOpen, className }: Readonly<MobileNavProps>) {
+  const nodeRef = useRef(null);
+  const { timeAnimateMobileNav } = styles;
+  const timeout = parseInt(timeAnimateMobileNav);
+
   return (
-    <nav className={cn(styles.mobileNav, className)}>
-      <ul className={styles.mobileNav__list}>
-        <NavElement to="/">Главная</NavElement>
-        <CatalogNavElement to="/catalog">Каталог</CatalogNavElement>
-        <NavElement to="/wholesale">Оптовая продажа</NavElement>
-        <NavElement to="/about">О нас</NavElement>
-      </ul>
-    </nav>
+    <CSSTransition
+      nodeRef={nodeRef}
+      in={isOpen}
+      classNames={{ ...styles }}
+      timeout={timeout}
+      unmountOnExit>
+      <nav className={cn(styles.mobileNav, className)} ref={nodeRef}>
+        <ul className={styles.mobileNav__list}>
+          <NavElement to="/">Главная</NavElement>
+          <CatalogNavElement to="/catalog">Каталог</CatalogNavElement>
+          <NavElement to="/wholesale">Оптовая продажа</NavElement>
+          <NavElement to="/about">О нас</NavElement>
+        </ul>
+      </nav>
+    </CSSTransition>
   );
 }
 

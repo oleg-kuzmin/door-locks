@@ -1,3 +1,5 @@
+@use '/src/shared/mixins' as *;
+
 :root {
   // Figma Colors
   --color-white: #fff;
@@ -25,8 +27,8 @@
 
   // Times
   --time-hover-main: 300ms;
-  --time-animate-button-mobile-nav-panel: 300ms;
-  --time-animate-mobile-nav-panel: 500ms;
+  --time-animate-button-mobile-nav: 300ms;
+  --time-animate-mobile-nav: #{$timeAnimateMobileNav};
 
   // Borders
   --border-width-main: 2px;
