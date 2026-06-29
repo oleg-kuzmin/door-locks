@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import { Link } from 'react-router';
 import { CSSTransition } from 'react-transition-group';
 import cn from 'classnames';
+import { LinkCallForm } from '../LinkCallForm/LinkCallForm';
+import { LinkPhone } from '../LinkPhone/LinkPhone';
 import styles from './MobileNav.module.scss';
 
 interface MobileNavProps {
@@ -28,6 +30,10 @@ export function MobileNav({ isOpen, className }: Readonly<MobileNavProps>) {
           <NavElement to="/wholesale">Оптовая продажа</NavElement>
           <NavElement to="/about">О нас</NavElement>
         </ul>
+        <div className={styles.mobileNav__phones}>
+          <LinkPhone />
+          <LinkCallForm className={styles.mobileNav__linkCallForm} />
+        </div>
       </nav>
     </CSSTransition>
   );

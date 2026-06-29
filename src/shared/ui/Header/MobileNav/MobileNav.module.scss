@@ -1,6 +1,9 @@
 @use '/src/shared/mixins' as *;
 
 .mobileNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   padding: 2.5rem 1.6rem 0;
   border-right: 0.1rem solid var(--color-black);
@@ -16,6 +19,29 @@
     display: flex;
     flex-direction: column;
     gap: 17px;
+  }
+
+  &__phones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3.8rem;
+
+    @include media-initial {
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @include media-mobile-M {
+      justify-content: flex-start;
+      gap: 3.6rem;
+    }
+  }
+
+  &__linkCallForm {
+    color: var(--color-main);
+    @include effect-hover-color-grey;
+    @include effect-focus-outline-main;
   }
 }
 

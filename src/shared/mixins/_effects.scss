@@ -7,6 +7,15 @@
   }
 }
 
+@mixin effect-hover-color-grey {
+  @media screen and (hover: hover) {
+    transition: color var(--time-hover-main);
+    &:hover {
+      color: var(--color-grey);
+    }
+  }
+}
+
 @mixin effect-focus-outline-main {
   &:focus-visible {
     border-radius: var(--border-radius-small);
