@@ -4,7 +4,8 @@ import { CSSTransition } from 'react-transition-group';
 import cn from 'classnames';
 import { LinkCallForm } from '../LinkCallForm/LinkCallForm';
 import { LinkPhone } from '../LinkPhone/LinkPhone';
-import styles from './MobileNav.module.scss';
+// import styles from './MobileNav.module.scss';
+import styles from './MobileNav-alternate.module.scss';
 
 interface MobileNavProps {
   isOpen: boolean;
