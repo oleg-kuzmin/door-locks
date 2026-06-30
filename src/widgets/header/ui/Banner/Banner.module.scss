@@ -38,6 +38,8 @@
   &__linkCallForm {
     position: absolute;
     right: 0;
+    text-underline-offset: 0.4rem;
+    @include font-sf-pro-display-medium(1.6rem, 163%, 0.12em);
     @include effect-hover-color-main;
     @include effect-focus-outline-main;
 

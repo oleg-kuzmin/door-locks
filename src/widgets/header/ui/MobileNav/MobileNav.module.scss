@@ -40,6 +40,8 @@
 
   &__linkCallForm {
     color: var(--color-main);
+    text-underline-offset: 0.3rem;
+    @include font-sf-pro-display-semibold(1.6rem, 163%, 0.12em);
     @include effect-hover-color-grey;
     @include effect-focus-outline-main;
   }
