@@ -1,0 +1,30 @@
+@use '/src/shared/mixins' as *;
+
+.buttonMain {
+  min-width: 220px;
+  max-width: 343px;
+  height: 50px;
+  padding: 0 10px;
+  overflow: hidden;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-main);
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+  color: var(--color-white);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color var(--time-hover-main);
+  @include font-button-txt;
+  @include effect-hover-button-main;
+  @include effect-active-button-main;
+  @include effect-focus-outline-main;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+}

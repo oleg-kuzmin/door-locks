@@ -24,6 +24,20 @@
   }
 }
 
+@mixin effect-hover-button-main {
+  @media screen and (hover: hover) {
+    &:not(:disabled):hover {
+      background-color: var(--color-main-hover);
+    }
+  }
+}
+
+@mixin effect-active-button-main {
+  &:not(:disabled):active {
+    background-color: var(--color-main-active);
+  }
+}
+
 @mixin effect-hover-two-icons {
   position: relative;
   &::before,
