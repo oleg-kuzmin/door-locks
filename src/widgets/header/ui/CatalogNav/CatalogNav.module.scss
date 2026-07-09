@@ -1,0 +1,33 @@
+@use '/src/shared/mixins' as *;
+
+.catalogNav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+}
+
+.catalogElement {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  gap: 3px;
+
+  &__link {
+    color: var(--color-grey);
+    @include font-16-reg-16_26;
+    @include effect-hover-color-main;
+  }
+
+  &__underline {
+    width: 0;
+    height: 2px;
+    background-color: var(--color-main);
+    transition: width var(--time-hover-main) ease-out;
+
+    &_active {
+      width: 100%;
+    }
+  }
+}
