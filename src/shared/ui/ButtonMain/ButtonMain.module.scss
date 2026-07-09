@@ -1,6 +1,10 @@
 @use '/src/shared/mixins' as *;
 
 .buttonMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
   min-width: 220px;
   max-width: 343px;
   height: 50px;
