@@ -1,10 +1,22 @@
 @use '/src/shared/mixins' as *;
 
 .catalogNav {
+  max-width: 79rem;
+  padding: 3.2rem;
+  border-radius: var(--border-radius-regular);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.1);
+
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    padding-bottom: 1.5rem;
+    gap: 1.1rem;
+  }
+
+  &__buttonMain {
+    width: 16.4rem;
+    height: 4rem;
   }
 }
 
@@ -12,17 +24,18 @@
   display: flex;
   flex-direction: column;
   width: max-content;
-  gap: 3px;
+  gap: 0.3rem;
 
   &__link {
     color: var(--color-grey);
     @include font-16-reg-16_26;
     @include effect-hover-color-main;
+    @include effect-focus-outline-main;
   }
 
   &__underline {
     width: 0;
-    height: 2px;
+    height: 0.2rem;
     background-color: var(--color-main);
     transition: width var(--time-hover-main) ease-out;
 

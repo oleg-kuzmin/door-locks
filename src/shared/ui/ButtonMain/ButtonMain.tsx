@@ -7,19 +7,26 @@ interface ButtonMainProps {
   onClick?: VoidFunction;
   to?: string;
   className?: string;
+  [key: string]: unknown;
 }
 
-export function ButtonMain({ children, to, onClick, className }: Readonly<ButtonMainProps>) {
+export function ButtonMain({
+  children,
+  to,
+  onClick,
+  className,
+  ...otherProps
+}: Readonly<ButtonMainProps>) {
   if (to) {
     return (
-      <Link className={cn(styles.buttonMain, className)} to={to}>
+      <Link className={cn(styles.buttonMain, className)} to={to} {...otherProps}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={cn(styles.buttonMain, className)} onClick={onClick}>
+    <button className={cn(styles.buttonMain, className)} onClick={onClick} {...otherProps}>
       {children}
     </button>
   );

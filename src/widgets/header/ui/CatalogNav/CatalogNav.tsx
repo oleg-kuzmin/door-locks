@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import cn from 'classnames';
+import { ButtonMain } from '@/shared/ui';
 import styles from './CatalogNav.module.scss';
 
 const catalogList = [
@@ -38,6 +39,13 @@ export function CatalogNav({ className }: Readonly<CatalogNavProps>) {
           />
         ))}
       </ul>
+      <ButtonMain
+        className={styles.catalogNav__buttonMain}
+        to="/"
+        onMouseEnter={() => setActiveName('')}
+        onFocus={() => setActiveName('')}>
+        Смотреть все
+      </ButtonMain>
     </nav>
   );
 }
@@ -52,7 +60,11 @@ interface CatalogElementProps {
 
 function CatalogElement({ name, to, isActive, onActive }: Readonly<CatalogElementProps>) {
   return (
-    <li className={styles.catalogElement} key={name} onMouseEnter={() => onActive(name)}>
+    <li
+      className={styles.catalogElement}
+      key={name}
+      onMouseEnter={() => onActive(name)}
+      onFocus={() => onActive('')}>
       <Link className={styles.catalogElement__link} to={to}>
         {name}
       </Link>
