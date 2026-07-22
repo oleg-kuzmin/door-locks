@@ -1,22 +1,25 @@
 @use '/src/shared/mixins' as *;
 
 .catalogNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 79rem;
   padding: 3.2rem;
   border-radius: var(--border-radius-regular);
   background-color: var(--color-white);
-  box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.4rem 1.8rem -0.2rem rgba(0, 0, 0, 0.1);
 
   &__list {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1.5rem;
     gap: 1.1rem;
   }
 
   &__buttonMain {
     width: 16.4rem;
     height: 4rem;
+    margin-top: 0.4rem;
   }
 }
 
@@ -26,21 +29,35 @@
   width: max-content;
   gap: 0.3rem;
 
-  &__link {
-    color: var(--color-grey);
-    @include font-16-reg-16_26;
-    @include effect-hover-color-main;
-    @include effect-focus-outline-main;
-  }
-
   &__underline {
     width: 0;
     height: 0.2rem;
     background-color: var(--color-main);
     transition: width var(--time-hover-main) ease-out;
+  }
 
-    &_active {
+  &__link {
+    color: var(--color-grey);
+    @include font-16-reg-16_26;
+    @include effect-hover-color-main;
+    @include effect-focus-outline-main;
+
+    &:not(:focus) + .catalogElement__underline_active {
       width: 100%;
     }
   }
+}
+
+.catalogImageContainer {
+  display: flex;
+  justify-content: center;
+  width: 35.1rem;
+  height: 30rem;
+  border: 0.1rem solid var(--color-stroke);
+}
+
+.catalogImage {
+  display: inline-block;
+  height: 100%;
+  animation: catalog-image var(--time-animate-catalog-image) ease-in-out both;
 }

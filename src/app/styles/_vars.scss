@@ -30,7 +30,8 @@
   // Times
   --time-hover-main: 300ms;
   --time-animate-button-mobile-nav: 300ms;
-  --time-animate-mobile-nav: #{$timeAnimateMobileNav};
+  --time-animate-catalog-image: 700ms;
+  --time-animate-mobile-nav: #{$timeAnimateMobileNav}; // scss variable for export from scss
 
   // Borders
   --border-width-main: 2px;
