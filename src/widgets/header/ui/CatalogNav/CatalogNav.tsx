@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router';
+import { CSSTransition } from 'react-transition-group';
 import cn from 'classnames';
 import { ButtonMain } from '@/shared/ui';
 import styles from './CatalogNav.module.scss';
@@ -16,50 +17,58 @@ const catalogList = [
 ];
 
 interface CatalogNavProps {
+  isOpen: boolean;
   className?: string;
 }
 
-export function CatalogNav({ className }: Readonly<CatalogNavProps>) {
+export function CatalogNav({ isOpen, className }: Readonly<CatalogNavProps>) {
   const [activeName, setActiveName] = useState(catalogList.at(0)?.name || null);
+  const nodeRef = useRef(null);
   const imageSrc = catalogList.find(catalog => catalog.name === activeName)?.image || null;
-
-  console.log(activeName);
-  console.log(imageSrc);
+  const { timeAnimateCatalogNav } = styles;
+  const timeout = parseInt(timeAnimateCatalogNav);
 
   function handleActiveElement(name: string) {
     setActiveName(name);
   }
 
   return (
-    <nav className={cn(styles.catalogNav, className)}>
-      <ul className={styles.catalogNav__list}>
-        {catalogList.map(element => (
-          <CatalogElement
-            key={element.name}
-            name={element.name}
-            to={element.to}
-            isActive={element.name === activeName}
-            onActive={handleActiveElement}
+    <CSSTransition
+      nodeRef={nodeRef}
+      in={isOpen}
+      classNames={{ ...styles }}
+      timeout={timeout}
+      unmountOnExit>
+      <nav className={cn(styles.catalogNav, className)} ref={nodeRef}>
+        <ul className={styles.catalogNav__list}>
+          {catalogList.map(element => (
+            <CatalogElement
+              key={element.name}
+              name={element.name}
+              to={element.to}
+              isActive={element.name === activeName}
+              onActive={handleActiveElement}
+            />
+          ))}
+          <li>
+            <ButtonMain
+              className={styles.catalogNav__buttonMain}
+              to="/"
+              onMouseEnter={() => setActiveName(null)}
+              onFocus={() => setActiveName(null)}>
+              Смотреть все
+            </ButtonMain>
+          </li>
+        </ul>
+        <CatalogImageContainer>
+          <CatalogImage
+            key={activeName}
+            src={imageSrc ?? '/categories/default.png'}
+            alt={activeName ?? 'смотреть все'}
           />
-        ))}
-        <li>
-          <ButtonMain
-            className={styles.catalogNav__buttonMain}
-            to="/"
-            onMouseEnter={() => setActiveName(null)}
-            onFocus={() => setActiveName(null)}>
-            Смотреть все
-          </ButtonMain>
-        </li>
-      </ul>
-      <CatalogImageContainer>
-        <CatalogImage
-          key={activeName}
-          src={imageSrc ?? '/categories/default.png'}
-          alt={activeName ?? 'смотреть все'}
-        />
-      </CatalogImageContainer>
-    </nav>
+        </CatalogImageContainer>
+      </nav>
+    </CSSTransition>
   );
 }
 

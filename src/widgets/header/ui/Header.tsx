@@ -4,7 +4,6 @@ import { Content, Logo } from '@/shared/ui';
 import { Banner } from './Banner/Banner';
 import { ButtonIcon } from './ButtonIcon/ButtonIcon';
 import { ButtonMobileNav } from './ButtonMobileNav/ButtonMobileNav';
-import { CatalogNav } from './CatalogNav/CatalogNav';
 import { DesktopNav } from './DesktopNav/DesktopNav';
 import { HiddenHeading } from './HiddenHeading/HiddenHeading';
 import { LinkPhone } from './LinkPhone/LinkPhone';
@@ -37,7 +36,6 @@ export function Header({ className }: Readonly<HeaderProps>) {
         </div>
       </Content>
       <MobileNav className={styles.header__mobileNav} isOpen={isOpenMobileNav} />
-      <CatalogNav />
     </header>
   );
 }

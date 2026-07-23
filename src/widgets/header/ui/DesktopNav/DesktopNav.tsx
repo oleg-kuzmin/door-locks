@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import cn from 'classnames';
+import { CatalogNav } from '../CatalogNav/CatalogNav';
 import styles from './DesktopNav.module.scss';
 
 interface DesktopNavProps {
@@ -20,16 +21,16 @@ export function DesktopNav({ className }: Readonly<DesktopNavProps>) {
   return (
     <nav className={cn(styles.desktopNav, className)}>
       <ul className={styles.desktopNav__list}>
-        <NavElement to="/" onActive={handleCloseCatalog}>
+        <NavElement onActive={handleCloseCatalog} to="/">
           Главная
         </NavElement>
-        <CatalogNavElement to="/catalog" onActive={handleOpenCatalog} isOpen={isOpenCatalog}>
+        <CatalogNavElement onActive={handleOpenCatalog} isOpen={isOpenCatalog} to="/catalog">
           Каталог
         </CatalogNavElement>
-        <NavElement to="/wholesale" onActive={handleCloseCatalog}>
+        <NavElement onActive={handleCloseCatalog} to="/wholesale">
           Оптовая продажа
         </NavElement>
-        <NavElement to="/about" onActive={handleCloseCatalog}>
+        <NavElement onActive={handleCloseCatalog} to="/about">
           О нас
         </NavElement>
       </ul>
@@ -55,7 +56,7 @@ function CatalogArrow({ isOpen }: Readonly<CatalogArrowProps>) {
 interface NavElementProps {
   to: string;
   onActive: VoidFunction;
-  children: React.ReactNode;
+  children: string;
 }
 
 function NavElement({ to, onActive, children }: Readonly<NavElementProps>) {
@@ -68,16 +69,19 @@ function NavElement({ to, onActive, children }: Readonly<NavElementProps>) {
   );
 }
 
-// CatalogNavElement = NavElement + CatalogArrow
+// CatalogNavElement
 interface CatalogNavElementProps extends NavElementProps {
   isOpen: boolean;
 }
 
 function CatalogNavElement({ to, onActive, isOpen, children }: Readonly<CatalogNavElementProps>) {
   return (
-    <NavElement to={to} onActive={onActive}>
-      {children}
-      <CatalogArrow isOpen={isOpen} />
-    </NavElement>
+    <li className={styles.navElement}>
+      <a className={styles.navElement__link} href={to} onMouseEnter={onActive} onFocus={onActive}>
+        {children}
+        <CatalogArrow isOpen={isOpen} />
+      </a>
+      <CatalogNav isOpen={isOpen} className={styles.navElement__catalogNav} />
+    </li>
   );
 }

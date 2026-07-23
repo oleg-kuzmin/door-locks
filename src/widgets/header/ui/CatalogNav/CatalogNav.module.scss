@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 79rem;
+  min-width: 79rem;
   padding: 3.2rem;
   border-radius: var(--border-radius-regular);
   background-color: var(--color-white);
@@ -60,4 +60,26 @@
   display: inline-block;
   height: 100%;
   animation: catalog-image var(--time-animate-catalog-image) ease-in-out both;
+}
+
+.enter {
+  opacity: 0;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: opacity $timeAnimateCatalogNav ease-out;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  transition: opacity $timeAnimateCatalogNav ease-out;
+}
+
+:export {
+  timeAnimateCatalogNav: #{$timeAnimateCatalogNav};
 }

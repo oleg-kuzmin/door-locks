@@ -8,6 +8,8 @@
 }
 
 .navElement {
+  position: relative;
+
   &__link {
     display: flex;
     align-items: center;
@@ -15,6 +17,17 @@
     @include font-sf-pro-text-light(2rem);
     @include effect-hover-color-main;
     @include effect-focus-outline-main;
+  }
+
+  &__catalogNav {
+    position: absolute;
+    top: 3.6rem;
+    @include media-initial {
+      left: -108%;
+    }
+    @include media-desktop {
+      left: 0;
+    }
   }
 }
 

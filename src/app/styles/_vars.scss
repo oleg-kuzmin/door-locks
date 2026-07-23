@@ -28,10 +28,11 @@
   --font-helvetica-neue-cyr: 'HelveticaNeueCyr', var(--font-fallback);
 
   // Times
-  --time-hover-main: 300ms;
-  --time-animate-button-mobile-nav: 300ms;
-  --time-animate-catalog-image: 700ms;
-  --time-animate-mobile-nav: #{$timeAnimateMobileNav}; // scss variable for export from scss
+  --time-hover-main: #{$timeHoverMain};
+  --time-animate-button-mobile-nav: #{$timeAnimateButtonMobileNav};
+  --time-animate-catalog-image: #{$timeAnimateCatalogImage};
+  --time-animate-mobile-nav: #{$timeAnimateMobileNav};
+  --time-animate-catalog-nav: #{$timeAnimateCatalogNav};
 
   // Borders
   --border-width-main: 2px;
