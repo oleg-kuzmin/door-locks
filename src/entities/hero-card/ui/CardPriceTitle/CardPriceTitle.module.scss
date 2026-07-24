@@ -1,0 +1,6 @@
+@use '/src/shared/mixins' as *;
+
+.cardPriceTitle {
+  color: var(--color-grey);
+  @include font-sf-pro-text-regular(1.2rem, 183%);
+}
