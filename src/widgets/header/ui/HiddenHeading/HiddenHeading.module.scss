@@ -2,9 +2,9 @@
 
 .hiddenHeading {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  width: 0.1rem;
+  height: 0.1rem;
+  margin: -0.1rem;
   overflow: hidden;
   clip-path: inset(0 0 0 0);
 }
