@@ -78,7 +78,7 @@
   &__mobileNav {
     position: absolute;
     top: 100%;
-    // todo: choose between regular and alternative style.
+    // todo: choose between styles
     // height: calc(100dvh - 100%);
 
     @include media-laptop {
