@@ -10,11 +10,11 @@ interface BannerProps {
 
 export function Banner({ children, className }: Readonly<BannerProps>) {
   return (
-    <div className={cn(styles.banner, className)}>
+    <article className={cn(styles.banner, className)}>
       <Content className={styles.banner__content}>
         <p className={styles.banner__text}>{children}</p>
         <LinkCallForm className={styles.banner__linkCallForm} />
       </Content>
-    </div>
+    </article>
   );
 }
