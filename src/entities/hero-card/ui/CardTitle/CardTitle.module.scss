@@ -4,15 +4,18 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   display: -webkit-box;
+  min-height: 2lh;
   line-clamp: 2;
   overflow: hidden;
   white-space: pre-wrap;
 
   @include media-initial {
+    // min-height: 6.8rem;
     @include font-H1-mob;
   }
 
   @include media-desktop {
+    // min-height: 12.4rem;
     @include font-H1;
   }
 }

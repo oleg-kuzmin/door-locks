@@ -1,0 +1,9 @@
+@use '/src/shared/mixins' as *;
+
+.homePage__hero {
+  padding-top: 1.9rem;
+
+  @include media-desktop {
+    padding-top: 12.3rem;
+  }
+}

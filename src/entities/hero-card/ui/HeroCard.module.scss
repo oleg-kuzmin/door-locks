@@ -16,6 +16,7 @@
   }
   @include media-desktop {
     align-items: revert;
+    justify-content: flex-end;
   }
 
   &__content {
@@ -54,7 +55,7 @@
 
   &__priceTitle {
     @include media-initial {
-      margin-top: 2.5rem;
+      margin-top: 2.4rem;
     }
     @include media-desktop {
       margin-top: 0;
@@ -63,18 +64,20 @@
 
   &__price {
     @include media-initial {
-      margin-top: 0.3rem;
+      margin-top: 0.4rem;
     }
     @include media-desktop {
-      margin-top: 0.4rem;
+      margin-top: 0.5rem;
     }
   }
 
   &__buttonMain {
     width: 100%;
-    max-width: 22rem;
     @include media-initial {
       margin-top: 1.5rem;
+    }
+    @include media-tablet {
+      max-width: 22rem;
     }
     @include media-desktop {
       margin: 1.5rem 0 4.3rem;

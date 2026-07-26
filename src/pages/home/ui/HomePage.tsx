@@ -1,11 +1,12 @@
 import { Header } from '@/widgets/header';
-import { HeroCard } from '@/entities/hero-card';
+import { Hero } from './Hero/Hero';
+import styles from './HomePage.module.scss';
 
 export function HomePage() {
   return (
     <>
       <Header />
-      <HeroCard />
+      <Hero className={styles.homePage__hero} />
     </>
   );
 }
