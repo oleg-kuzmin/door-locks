@@ -8,3 +8,109 @@
     justify-content: center;
   }
 }
+
+.paginationBullet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media-initial {
+    width: 2rem;
+    height: 2rem;
+  }
+  @include media-desktop {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &::after {
+    border-radius: 50%;
+    background-color: var(--color-light-blue);
+    content: '';
+    @include media-initial {
+      width: 0.4rem;
+      height: 0.4rem;
+    }
+    @include media-desktop {
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+  }
+
+  &_active {
+    border: 0.1rem solid var(--color-light-blue);
+    border-radius: 50%;
+    &::after {
+      background-color: var(--color-main);
+      @include media-initial {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+      @include media-desktop {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+    }
+  }
+}
+
+.buttonSlide {
+  border-radius: var(--border-radius-small);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include effect-hover-button-slide;
+  @include effect-focus-outline-main;
+  @include media-initial {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  @include media-desktop {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &_prev {
+    @include media-initial {
+      background-image: url('/icons/button-slide-mobile-prev.svg');
+    }
+    @include media-desktop {
+      background-image: url('/icons/button-slide-desktop-prev.svg');
+    }
+  }
+
+  &_next {
+    @include media-initial {
+      background-image: url('/icons/button-slide-mobile-next.svg');
+    }
+    @include media-desktop {
+      background-image: url('/icons/button-slide-desktop-next.svg');
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  @include media-initial {
+    justify-content: space-between;
+  }
+  @include media-mobile-L {
+    justify-content: center;
+    gap: 2.4rem;
+  }
+  @include media-desktop {
+    gap: 1.5rem;
+  }
+
+  &__bullets {
+    display: flex;
+    align-items: center;
+    @include media-initial {
+      gap: 0.9rem;
+    }
+    @include media-desktop {
+      gap: 0.7rem;
+    }
+  }
+}

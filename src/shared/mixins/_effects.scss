@@ -78,3 +78,12 @@
     }
   }
 }
+
+@mixin effect-hover-button-slide {
+  @media screen and (hover: hover) {
+    transition: background-color var(--time-hover-main);
+    &:hover {
+      background-color: var(--color-light-blue);
+    }
+  }
+}
