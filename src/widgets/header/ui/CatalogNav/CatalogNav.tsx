@@ -72,7 +72,6 @@ export function CatalogNav({ isOpen, className }: Readonly<CatalogNavProps>) {
   );
 }
 
-// CatalogElement
 interface CatalogElementProps {
   name: string;
   to: string;
@@ -98,7 +97,6 @@ function CatalogElement({ name, to, isActive, onActive }: Readonly<CatalogElemen
   );
 }
 
-// CatalogImageContainer
 interface CatalogImageContainerProps {
   children: React.ReactNode;
 }
@@ -107,7 +105,6 @@ function CatalogImageContainer({ children }: Readonly<CatalogImageContainerProps
   return <div className={styles.catalogImageContainer}>{children}</div>;
 }
 
-// CatalogImage
 interface CatalogImageProps {
   src: string;
   alt: string;

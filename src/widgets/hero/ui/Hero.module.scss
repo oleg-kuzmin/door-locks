@@ -1,0 +1,37 @@
+@use '/src/shared/mixins' as *;
+
+.hero {
+  background-color: var(--color-bg-hero);
+
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  @include media-initial {
+    justify-content: space-between;
+  }
+  @include media-mobile-L {
+    justify-content: center;
+    gap: 2.4rem;
+  }
+  @include media-desktop {
+    gap: 1.5rem;
+  }
+
+  &__bullets {
+    display: flex;
+    align-items: center;
+    @include media-initial {
+      gap: 0.9rem;
+    }
+    @include media-desktop {
+      gap: 0.7rem;
+    }
+  }
+}

@@ -38,7 +38,6 @@ export function DesktopNav({ className }: Readonly<DesktopNavProps>) {
   );
 }
 
-// CatalogArrow
 interface CatalogArrowProps {
   isOpen: boolean;
 }
@@ -52,7 +51,6 @@ function CatalogArrow({ isOpen }: Readonly<CatalogArrowProps>) {
   );
 }
 
-// NavElement
 interface NavElementProps {
   to: string;
   onActive: VoidFunction;
@@ -69,7 +67,6 @@ function NavElement({ to, onActive, children }: Readonly<NavElementProps>) {
   );
 }
 
-// CatalogNavElement
 interface CatalogNavElementProps extends NavElementProps {
   isOpen: boolean;
 }

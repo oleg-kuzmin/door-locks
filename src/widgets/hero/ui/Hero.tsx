@@ -1,6 +1,8 @@
 import cn from 'classnames';
 // import { HeroCard } from '@/entities/hero-card';
 import { Content } from '@/shared/ui';
+import { ButtonSlide } from './ButtonSlide/ButtonSlide';
+import { PaginationBullet } from './PaginationBullet/PaginationBullet';
 import styles from './Hero.module.scss';
 
 interface HeroProps {
@@ -30,34 +32,4 @@ function Pagination() {
       <ButtonSlide type="next" />
     </div>
   );
-}
-
-interface PaginationBulletProps {
-  isActive?: boolean;
-}
-
-function PaginationBullet({ isActive }: Readonly<PaginationBulletProps>) {
-  return (
-    <div
-      className={cn(styles.paginationBullet, { [styles.paginationBullet_active]: isActive })}></div>
-  );
-}
-
-interface ButtonSlideProps {
-  type: 'prev' | 'next';
-}
-
-function ButtonSlide({ type }: Readonly<ButtonSlideProps>) {
-  let className = styles.buttonSlide;
-
-  switch (type) {
-    case 'prev':
-      className = cn(className, styles.buttonSlide_prev);
-      break;
-    case 'next':
-      className = cn(className, styles.buttonSlide_next);
-      break;
-  }
-
-  return <button className={className}></button>;
 }

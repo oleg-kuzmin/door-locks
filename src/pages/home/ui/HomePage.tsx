@@ -1,5 +1,5 @@
 import { Header } from '@/widgets/header';
-import { Hero } from './Hero/Hero';
+import { Hero } from '@/widgets/hero';
 import styles from './HomePage.module.scss';
 
 export function HomePage() {

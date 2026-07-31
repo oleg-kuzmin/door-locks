@@ -1,0 +1,45 @@
+@use '/src/shared/mixins' as *;
+
+.paginationBullet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media-initial {
+    width: 2rem;
+    height: 2rem;
+  }
+  @include media-desktop {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &::after {
+    border-radius: 50%;
+    background-color: var(--color-light-blue);
+    content: '';
+    @include media-initial {
+      width: 0.4rem;
+      height: 0.4rem;
+    }
+    @include media-desktop {
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+  }
+
+  &_active {
+    border: 0.1rem solid var(--color-light-blue);
+    border-radius: 50%;
+    &::after {
+      background-color: var(--color-main);
+      @include media-initial {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+      @include media-desktop {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+    }
+  }
+}

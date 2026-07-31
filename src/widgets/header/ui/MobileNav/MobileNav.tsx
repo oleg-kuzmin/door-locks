@@ -39,7 +39,6 @@ export function MobileNav({ isOpen, className }: Readonly<MobileNavProps>) {
   );
 }
 
-// NavElement
 interface NavElementProps {
   to: string;
   children: React.ReactNode;
@@ -55,7 +54,6 @@ function NavElement({ to, children }: Readonly<NavElementProps>) {
   );
 }
 
-// CatalogNavElement
 function CatalogNavElement({ to, children }: Readonly<NavElementProps>) {
   return (
     <NavElement to={to}>
@@ -65,7 +63,6 @@ function CatalogNavElement({ to, children }: Readonly<NavElementProps>) {
   );
 }
 
-// CatalogArrow
 function CatalogArrow() {
   return <span className={cn(styles.catalogArrow)}></span>;
 }

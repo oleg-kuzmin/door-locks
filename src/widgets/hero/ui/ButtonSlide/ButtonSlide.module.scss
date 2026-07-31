@@ -1,0 +1,36 @@
+@use '/src/shared/mixins' as *;
+
+.buttonSlide {
+  border-radius: var(--border-radius-small);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include effect-hover-button-slide;
+  @include effect-focus-outline-main;
+  @include media-initial {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  @include media-desktop {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &_prev {
+    @include media-initial {
+      background-image: url('/icons/button-slide-mobile-prev.svg');
+    }
+    @include media-desktop {
+      background-image: url('/icons/button-slide-desktop-prev.svg');
+    }
+  }
+
+  &_next {
+    @include media-initial {
+      background-image: url('/icons/button-slide-mobile-next.svg');
+    }
+    @include media-desktop {
+      background-image: url('/icons/button-slide-desktop-next.svg');
+    }
+  }
+}
