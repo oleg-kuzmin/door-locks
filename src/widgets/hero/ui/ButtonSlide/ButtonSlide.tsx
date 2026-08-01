@@ -3,10 +3,11 @@ import styles from './ButtonSlide.module.scss';
 
 interface ButtonSlideProps {
   type: 'prev' | 'next';
+  onClick: VoidFunction;
   className?: string;
 }
 
-export function ButtonSlide({ type, className }: Readonly<ButtonSlideProps>) {
+export function ButtonSlide({ type, onClick, className }: Readonly<ButtonSlideProps>) {
   let classNameResult = styles.buttonSlide;
 
   switch (type) {
@@ -18,5 +19,5 @@ export function ButtonSlide({ type, className }: Readonly<ButtonSlideProps>) {
       break;
   }
 
-  return <button className={cn(styles.buttonSlide, classNameResult)}></button>;
+  return <button className={cn(styles.buttonSlide, classNameResult)} onClick={onClick}></button>;
 }

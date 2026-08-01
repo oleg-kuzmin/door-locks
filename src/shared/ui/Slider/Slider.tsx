@@ -1,12 +1,20 @@
-import cn from 'classnames';
-import styles from './Slider.module.scss';
+import type { SwiperClass, SwiperProps } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 interface SliderProps {
-  className?: string;
+  swiperConfig: SwiperProps;
+  slides: React.ReactElement[];
+  onSwiper: (swiper: SwiperClass) => void;
 }
 
-export function Slider({ className }: Readonly<SliderProps>) {
+// need useSlider hook
+export function Slider({ slides, onSwiper, swiperConfig }: SliderProps) {
   return (
-    <div className={cn(styles.slider, className)}></div>
+    <Swiper onSwiper={onSwiper} onSlideChange={onSwiper} {...swiperConfig}>
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index}>{slide}</SwiperSlide>
+      ))}
+    </Swiper>
   );
 }

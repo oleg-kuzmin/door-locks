@@ -15,8 +15,9 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router": "^8.3.0",
-    "react-transition-group": "^4.4.5"
-  },  
+    "react-transition-group": "^4.4.5",
+    "swiper": "^14.0.7"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@feature-sliced/steiger-plugin": "^0.7.0",
