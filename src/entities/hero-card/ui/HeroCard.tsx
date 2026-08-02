@@ -1,11 +1,10 @@
 import cn from 'classnames';
-import { ButtonMain } from '@/shared/ui';
+import { ButtonMain, SectionTitle } from '@/shared/ui';
 import type { Card } from '../model';
 import { CardDescription } from './CardDescription/CardDescription';
 import { CardImage } from './CardImage/CardImage';
 import { CardPrice } from './CardPrice/CardPrice';
 import { CardPriceTitle } from './CardPriceTitle/CardPriceTitle';
-import { CardTitle } from './CardTitle/CardTitle';
 import styles from './HeroCard.module.scss';
 
 interface HeroCardProps {
@@ -51,7 +50,7 @@ export function HeroCard({ className }: Readonly<HeroCardProps>) {
       <CardImage src={image} alt={description} />
 
       <div className={styles.heroCard__content}>
-        <CardTitle className={styles.heroCard__title}>{title}</CardTitle>
+        <SectionTitle className={styles.heroCard__title}>{title}</SectionTitle>
         <CardDescription className={styles.heroCard__description}>{description}</CardDescription>
         <CardPriceTitle className={styles.heroCard__priceTitle} />
         <CardPrice className={styles.heroCard__price} newPrice={newPrice} oldPrice={oldPrice} />

@@ -1,0 +1,11 @@
+@use '/src/shared/mixins' as *;
+
+.sectionTitle {
+  @include media-initial {
+    @include font-H1-mob;
+  }
+
+  @include media-desktop {
+    @include font-H1;
+  }
+}
