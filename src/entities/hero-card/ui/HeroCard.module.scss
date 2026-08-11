@@ -1,25 +1,27 @@
 @use '/src/shared/mixins' as *;
 
 .heroCard {
-  display: flex;
-  width: 100%;
-  @include media-initial {
-    flex-direction: column;
-    align-items: center;
-    max-width: 34.3rem;
-  }
-  @include media-tablet {
-    flex-direction: row;
-    justify-content: center;
-    max-width: 100%;
-    gap: 6.7rem;
-  }
-  @include media-desktop {
-    align-items: revert;
-    justify-content: flex-end;
+  &__content {
+    display: flex;
+    margin: 0 auto;
+    @include media-initial {
+      flex-direction: column;
+      align-items: center;
+      max-width: 34.3rem;
+    }
+    @include media-tablet {
+      flex-direction: row;
+      justify-content: center;
+      max-width: 100%;
+      gap: 6.7rem;
+    }
+    @include media-desktop {
+      align-items: revert;
+      justify-content: flex-end;
+    }
   }
 
-  &__content {
+  &__info {
     display: flex;
     flex-direction: column;
     @include media-initial {
@@ -56,7 +58,7 @@
     }
     @include media-desktop {
       display: -webkit-box;
-      margin: 19px 0 auto;
+      margin: 1.9rem 0 auto;
     }
   }
 
