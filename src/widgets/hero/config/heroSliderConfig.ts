@@ -7,7 +7,7 @@ export const heroSliderConfig: SwiperProps = {
   speed: 1000,
   loop: true,
   initialSlide: 0,
-  modules: [Autoplay, Pagination],
+  modules: [Autoplay],
   autoplay: false, // todo: prod
   // autoplay: {
   //   delay: 5000,
