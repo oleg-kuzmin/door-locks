@@ -1,0 +1,1 @@
+export { heroSliderConfig } from './heroSliderConfig';

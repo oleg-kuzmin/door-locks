@@ -1,8 +1,7 @@
-import type { SwiperProps } from 'swiper/react';
 import cn from 'classnames';
-import { Autoplay } from 'swiper/modules';
 import { HeroCard } from '@/entities/hero-card';
 import { Content, Slider, useSlider } from '@/shared/ui';
+import { heroSliderConfig } from '../config';
 import { Pagination } from './Pagination/Pagination';
 import styles from './Hero.module.scss';
 
@@ -36,29 +35,6 @@ const slides = [
   },
 ];
 
-const swiperConfig: SwiperProps = {
-  slidesPerView: 1,
-  spaceBetween: 16,
-  speed: 1000,
-  loop: true,
-  initialSlide: 0,
-  modules: [Autoplay],
-  autoplay: false, // todo: prod
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  //   pauseOnMouseEnter: true,
-  // },
-  breakpoints: {
-    0: {
-      allowTouchMove: true,
-    },
-    1440: {
-      allowTouchMove: false,
-    },
-  },
-};
-
 interface HeroProps {
   className?: string;
 }
@@ -73,7 +49,7 @@ export function Hero({ className }: Readonly<HeroProps>) {
       <Content className={styles.hero__content}>
         <Slider
           className={styles.hero__slider}
-          swiperConfig={swiperConfig}
+          swiperConfig={heroSliderConfig}
           slides={slideElements}
           onSwiper={onSwiper}
         />

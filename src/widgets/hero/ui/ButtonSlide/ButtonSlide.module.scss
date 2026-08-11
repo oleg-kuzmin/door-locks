@@ -1,6 +1,7 @@
 @use '/src/shared/mixins' as *;
 
 .buttonSlide {
+  flex-shrink: 0;
   border-radius: var(--border-radius-small);
   background-position: center;
   background-size: contain;
