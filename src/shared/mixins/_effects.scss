@@ -82,8 +82,25 @@
 @mixin effect-hover-button-slide {
   @media screen and (hover: hover) {
     transition: background-color var(--time-hover-main);
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--color-light-blue);
     }
+  }
+}
+
+@mixin effect-card-shadow {
+  box-shadow:
+    -8px -4px 8px 0px #ffffff,
+    8px 4px 10px 0px #d1d9e6,
+    4px 4px 4px 0px #d1d9e6,
+    -4px -4px 4px 0px #ffffff;
+  transition: box-shadow var(--time-hover-main) ease-out;
+  @media screen and (hover: hover) {
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  &:active {
+    box-shadow: none;
   }
 }

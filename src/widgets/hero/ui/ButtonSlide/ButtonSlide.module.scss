@@ -19,19 +19,19 @@
 
   &_prev {
     @include media-initial {
-      background-image: url('/icons/button-slide-mobile-prev.svg');
+      background-image: url('/icons/hero-button-slide-mobile-prev.svg');
     }
     @include media-desktop {
-      background-image: url('/icons/button-slide-desktop-prev.svg');
+      background-image: url('/icons/hero-button-slide-desktop-prev.svg');
     }
   }
 
   &_next {
     @include media-initial {
-      background-image: url('/icons/button-slide-mobile-next.svg');
+      background-image: url('/icons/hero-button-slide-mobile-next.svg');
     }
     @include media-desktop {
-      background-image: url('/icons/button-slide-desktop-next.svg');
+      background-image: url('/icons/hero-button-slide-desktop-next.svg');
     }
   }
 }

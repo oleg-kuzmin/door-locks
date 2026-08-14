@@ -4,10 +4,11 @@ import styles from './ButtonSlide.module.scss';
 interface ButtonSlideProps {
   type: 'prev' | 'next';
   onClick: VoidFunction;
+  disabled?: boolean;
   className?: string;
 }
 
-export function ButtonSlide({ type, onClick, className }: Readonly<ButtonSlideProps>) {
+export function ButtonSlide({ type, onClick, disabled, className }: Readonly<ButtonSlideProps>) {
   let classModifier = '';
 
   switch (type) {
@@ -20,6 +21,9 @@ export function ButtonSlide({ type, onClick, className }: Readonly<ButtonSlidePr
   }
 
   return (
-    <button className={cn(styles.buttonSlide, classModifier, className)} onClick={onClick}></button>
+    <button
+      className={cn(styles.buttonSlide, classModifier, className)}
+      onClick={onClick}
+      disabled={disabled}></button>
   );
 }

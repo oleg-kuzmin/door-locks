@@ -7,14 +7,23 @@ interface SliderProps {
   slides: React.ReactElement[];
   onSwiper: (swiper: SwiperClass) => void;
   className?: string;
+  classSlide?: string;
 }
 
 // use with "useSlider" hook
-export function Slider({ slides, onSwiper, swiperConfig, className }: Readonly<SliderProps>) {
+export function Slider({
+  slides,
+  onSwiper,
+  swiperConfig,
+  className,
+  classSlide,
+}: Readonly<SliderProps>) {
   return (
     <Swiper className={className} onSwiper={onSwiper} onSlideChange={onSwiper} {...swiperConfig}>
       {slides.map((slide, index) => (
-        <SwiperSlide key={index}>{slide}</SwiperSlide>
+        <SwiperSlide key={index} className={classSlide}>
+          {slide}
+        </SwiperSlide>
       ))}
     </Swiper>
   );

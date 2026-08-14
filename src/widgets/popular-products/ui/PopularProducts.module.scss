@@ -1,0 +1,55 @@
+@use '/src/shared/mixins' as *;
+
+.popularProducts {
+  &__top {
+    display: flex;
+    align-items: center;
+    @include media-initial {
+      margin-bottom: 0.8rem;
+    }
+    @include media-laptop {
+      justify-content: space-between;
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  &__actions {
+    gap: 4rem;
+    @include media-initial {
+      display: none;
+    }
+    @include media-desktop {
+      display: flex;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    max-width: 1272px;
+    @include media-initial {
+      width: calc(100% - 2px);
+    }
+    @include media-laptop {
+      width: calc(100% - 70px);
+    }
+    @include media-desktop {
+      width: calc(100% - 168px);
+    }
+  }
+
+  &__slide {
+    width: max-content;
+    padding: 1.5rem;
+    transition: opacity var(--time-animate-product-card-fade);
+    &:global(:not(.swiper-slide-fully-visible)) {
+      opacity: 0.3;
+    }
+  }
+}
+
+.testCard {
+  width: 288px;
+  height: 426px;
+  background-color: gold;
+  @include effect-card-shadow;
+}
