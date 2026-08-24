@@ -1,0 +1,9 @@
+@use '/src/shared/mixins' as *;
+
+.productCard {
+  width: 28.8rem;
+  height: 42.6rem;
+  min-height: 42.6rem;
+  outline: 0.1rem solid red;
+  @include effect-card-shadow;
+}

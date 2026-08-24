@@ -1,0 +1,29 @@
+@use '/src/shared/mixins' as *;
+
+.productStock {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 0.8rem;
+  background-color: gold;
+  color: var(--color-grey);
+  @include font-14-reg-14_24;
+
+  &::before {
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--border-radius-small);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+  }
+
+  &_true::before {
+    background-image: url('/icons/product-stock-true.svg');
+  }
+
+  &_false::before {
+    background-image: url('/icons/product-stock-false.svg');
+  }
+}

@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { ProductCard } from '@/entities/product-card';
 import { Content, SectionTitle, Slider, useSlider } from '@/shared/ui';
 import { popularProductsSliderConfig } from '../config';
 import { ButtonSlide } from './ButtonSlide/ButtonSlide';
@@ -8,12 +9,12 @@ interface PopularProductsProps {
   className?: string;
 }
 
+const slides = Array.from({ length: 8 }, (_, index) => {
+  return <ProductCard key={index} />;
+});
+
 export function PopularProducts({ className }: Readonly<PopularProductsProps>) {
   const { onNext, onPrev, onSwiper } = useSlider();
-
-  const slideElements = Array.from({ length: 8 }, (_, index) => {
-    return <TestCard key={index}>{index + 1}</TestCard>;
-  });
 
   return (
     <section className={cn(styles.popularProducts, className)}>
@@ -29,18 +30,10 @@ export function PopularProducts({ className }: Readonly<PopularProductsProps>) {
       <Slider
         className={styles.popularProducts__slider}
         classSlide={styles.popularProducts__slide}
-        slides={slideElements}
+        slides={slides}
         swiperConfig={popularProductsSliderConfig}
         onSwiper={onSwiper}
       />
     </section>
-  );
-}
-
-function TestCard({ children }) {
-  return (
-    <div className={styles.testCard}>
-      <h1>{children}</h1>
-    </div>
   );
 }
