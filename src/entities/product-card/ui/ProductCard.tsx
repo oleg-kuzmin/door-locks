@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { ProductPresent } from './ProductPresent/ProductPresent';
 import { ProductSale } from './ProductSale/ProductSale';
 import { ProductStock } from './ProductStock/ProductStock';
 import styles from './ProductCard.module.scss';
@@ -11,7 +12,8 @@ export function ProductCard({ className }: Readonly<ProductCardProps>) {
   return (
     <div className={cn(styles.productCard, className)}>
       {/* <ProductStock inStock={true} /> */}
-      <ProductSale />
+      {/* <ProductSale /> */}
+      <ProductPresent />
     </div>
   );
 }

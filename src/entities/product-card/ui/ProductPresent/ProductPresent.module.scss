@@ -1,0 +1,26 @@
+@use '/src/shared/mixins' as *;
+
+.productPresent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9rem;
+  height: 2.6rem;
+  gap: 1rem;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-white);
+  background-color: gold;
+  box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.03);
+  @include font-sf-pro-text-regular(1.2rem);
+
+  &::before {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 2px;
+    background-image: url('/icons/present.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+  }
+}
