@@ -1,0 +1,20 @@
+@use '/src/shared/mixins' as *;
+
+.price {
+  display: flex;
+  align-items: center;
+
+  &__new {
+    &:after {
+      content: '\20BD';
+    }
+  }
+
+  &__old {
+    color: var(--color-text-through);
+    text-decoration: line-through;
+    &:after {
+      content: '\20BD';
+    }
+  }
+}

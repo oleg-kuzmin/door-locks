@@ -1,1 +1,1 @@
-export type { Card } from './Card';
+export type { ObjectHero } from './ObjectHero';

@@ -1,0 +1,30 @@
+@use '/src/shared/mixins' as *;
+
+.productRating {
+  display: flex;
+  gap: 0.8rem;
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  &__star {
+    width: 1.6rem;
+    height: 1.7rem;
+    background-image: url('/icons/rating-star-empty.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &_full {
+      background-image: url('/icons/rating-star-full.svg');
+    }
+  }
+
+  &__text {
+    color: var(--grey);
+    @include font-sf-pro-text-regular(1.3rem, 1.62);
+  }
+}

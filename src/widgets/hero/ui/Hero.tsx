@@ -1,11 +1,11 @@
 import cn from 'classnames';
-import { HeroCard } from '@/entities/hero-card';
+import { HeroCard, type ObjectHero } from '@/entities/hero-card';
 import { Content, Slider, useSlider } from '@/shared/ui';
 import { heroSliderConfig } from '../config';
 import { Pagination } from './Pagination/Pagination';
 import styles from './Hero.module.scss';
 
-const slides = [
+const slides: ObjectHero[] = [
   {
     id: '3290421369',
     title: 'Golden Soft \nGS-200Z-5 для офиса',

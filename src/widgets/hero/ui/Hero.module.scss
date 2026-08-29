@@ -1,7 +1,7 @@
 @use '/src/shared/mixins' as *;
 
 .hero {
-  background-color: var(--color-bg-hero);
+  background-color: var(--color-bg-grey);
 
   &__content {
     display: flex;

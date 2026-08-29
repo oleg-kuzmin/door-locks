@@ -1,0 +1,8 @@
+@use '/src/shared/mixins' as *;
+
+.productImage {
+  display: inline-block;
+  width: 26.4rem;
+  height: 26.4rem;
+  object-fit: contain;
+}

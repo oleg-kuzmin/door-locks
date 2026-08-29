@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { ButtonMain, SectionTitle } from '@/shared/ui';
-import type { Card } from '../model';
+import type { ObjectHero } from '../model';
 import { CardDescription } from './CardDescription/CardDescription';
 import { CardImage } from './CardImage/CardImage';
 import { CardPrice } from './CardPrice/CardPrice';
@@ -8,7 +8,7 @@ import { CardPriceTitle } from './CardPriceTitle/CardPriceTitle';
 import styles from './HeroCard.module.scss';
 
 interface HeroCardProps {
-  card: Card;
+  card: ObjectHero;
   className?: string;
 }
 

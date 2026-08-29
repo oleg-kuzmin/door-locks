@@ -1,4 +1,4 @@
-export type Card = {
+export type ObjectHero = {
   id: string;
   title: string;
   description: string;

@@ -46,10 +46,3 @@
     }
   }
 }
-
-.testCard {
-  width: 288px;
-  height: 426px;
-  background-color: gold;
-  @include effect-card-shadow;
-}

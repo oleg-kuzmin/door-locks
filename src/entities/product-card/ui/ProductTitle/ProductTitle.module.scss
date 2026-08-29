@@ -1,0 +1,6 @@
+@use '/src/shared/mixins' as *;
+
+.productTitle {
+  color: var(--grey);
+  @include font-16-reg-16_26;
+}
