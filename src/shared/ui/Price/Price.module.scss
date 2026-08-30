@@ -4,17 +4,16 @@
   display: flex;
   align-items: center;
 
-  &__new {
+  &__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     &:after {
       content: '\20BD';
     }
-  }
-
-  &__old {
-    color: var(--color-text-through);
-    text-decoration: line-through;
-    &:after {
-      content: '\20BD';
+    &_old {
+      color: var(--color-text-through);
+      text-decoration: line-through;
     }
   }
 }

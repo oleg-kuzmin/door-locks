@@ -12,11 +12,15 @@ export function Price({ className, children }: Readonly<PriceProps>) {
 }
 
 function New({ className, children }: Readonly<{ className?: string; children: string | number }>) {
-  return <ins className={cn(styles.price__new, className)}>{addWhiteSpaceToPrice(children)}</ins>;
+  return <ins className={cn(styles.price__text, className)}>{addWhiteSpaceToPrice(children)}</ins>;
 }
 
 function Old({ className, children }: Readonly<{ className?: string; children: string | number }>) {
-  return <del className={cn(styles.price__old, className)}>{addWhiteSpaceToPrice(children)}</del>;
+  return (
+    <del className={cn(styles.price__text, styles.price__text_old, className)}>
+      {addWhiteSpaceToPrice(children)}
+    </del>
+  );
 }
 
 Price.New = New;

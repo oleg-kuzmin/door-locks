@@ -1,6 +1,13 @@
 @use '/src/shared/mixins' as *;
 
 .productTitle {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  min-height: 2lh;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
   color: var(--grey);
+  text-overflow: ellipsis;
   @include font-16-reg-16_26;
 }

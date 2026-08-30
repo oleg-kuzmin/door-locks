@@ -8,7 +8,7 @@ export function HomePage() {
     <>
       <Header />
       {/* <Hero className={styles.homePage__hero} /> */}
-      <PopularProducts className={styles.homePage__popularProducts} />
+      {/* <PopularProducts className={styles.homePage__popularProducts} /> */}
     </>
   );
 }

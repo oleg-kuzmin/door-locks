@@ -40,7 +40,7 @@
   }
 
   &__info {
-    padding: 0 1.1rem 1.1rem;
+    padding: 1.1rem;
     border: 0.1rem solid var(--color-stroke);
     border-top: none;
     border-bottom-right-radius: var(--border-radius-main);
@@ -48,7 +48,7 @@
   }
 
   &__rating {
-    padding: 1rem 0 0.7rem;
+    margin: -0.1rem 0 0.7rem;
   }
 
   &__title {
