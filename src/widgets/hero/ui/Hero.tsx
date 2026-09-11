@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { HeroCard, type ObjectHero } from '@/entities/hero-card';
-import { Content, Slider, useSlider } from '@/shared/ui';
+import { Content, Slider } from '@/shared/ui';
 import { heroSliderConfig } from '../config';
 import { Pagination } from './Pagination/Pagination';
 import styles from './Hero.module.scss';

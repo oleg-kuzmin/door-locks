@@ -25,21 +25,22 @@
 
   &__slider {
     width: 100%;
-    max-width: 1272px;
-    @include media-initial {
-      width: calc(100% - 2px);
-    }
-    @include media-laptop {
-      width: calc(100% - 70px);
-    }
-    @include media-desktop {
-      width: calc(100% - 168px);
-    }
+    height: 100%;
+    // max-width: 1272px;
+    // @include media-initial {
+    //   width: calc(100% - 2px);
+    // }
+    // @include media-laptop {
+    //   width: calc(100% - 70px);
+    // }
+    // @include media-desktop {
+    //   width: calc(100% - 168px);
+    // }
   }
 
   &__slide {
     width: max-content;
-    padding: 1.5rem;
+    padding: 15px;
     transition: opacity var(--time-animate-product-card-fade);
     &:global(:not(.swiper-slide-fully-visible)) {
       opacity: 0.3;

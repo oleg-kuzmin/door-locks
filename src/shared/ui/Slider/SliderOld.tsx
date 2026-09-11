@@ -4,7 +4,8 @@ import 'swiper/css';
 
 interface SliderProps {
   swiperConfig: SwiperProps;
-  slides: React.ReactElement[];
+  slides: { [key: string]: unknown }[];
+  render: (slide: any) => React.ReactNode;
   onSwiper: (swiper: SwiperClass) => void;
   className?: string;
   classSlide?: string;
@@ -13,14 +14,17 @@ interface SliderProps {
 // use with "useSlider" hook
 export function Slider({
   slides,
+  render,
   onSwiper,
   swiperConfig,
   className,
   classSlide,
 }: Readonly<SliderProps>) {
+  const slideElements = slides.map(render);
+
   return (
     <Swiper className={className} onSwiper={onSwiper} onSlideChange={onSwiper} {...swiperConfig}>
-      {slides.map((slide, index) => (
+      {slideElements.map((slide, index) => (
         <SwiperSlide key={index} className={classSlide}>
           {slide}
         </SwiperSlide>
