@@ -1,1 +1,1 @@
-export { popularProductsSliderConfig } from './popularProductsSliderConfig';
+export { popularProductsSwiperConfig } from './popularProductsSwiperConfig';

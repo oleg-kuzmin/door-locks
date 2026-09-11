@@ -1,14 +1,10 @@
 import cn from 'classnames';
 import { type ObjectProduct, ProductCard } from '@/entities/product-card';
-import { Content, Slider } from '@/shared/ui';
-import { popularProductsSliderConfig } from '../config';
+import { Content, SectionTitle, Slider } from '@/shared/ui';
+import { popularProductsSwiperConfig } from '../config';
 import styles from './PopularProducts.module.scss';
 
-interface PopularProductsProps {
-  className?: string;
-}
-
-const productSlides: ObjectProduct[] = [
+const products: ObjectProduct[] = [
   {
     id: '1',
     title: 'Дверной Замок Golden Soft для отеля',
@@ -89,129 +85,40 @@ const productSlides: ObjectProduct[] = [
     present: true,
     sale: true,
   },
-  {
-    id: '9',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
-  {
-    id: '10',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
-  {
-    id: '11',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
-  {
-    id: '12',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
-  {
-    id: '13',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
-  {
-    id: '14',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
-  {
-    id: '15',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
-  {
-    id: '16',
-    title: 'Дверной Замок Golden Soft для отеля',
-    image: '/test.png',
-    newPrice: 33000,
-    oldPrice: 37000,
-    inStock: true,
-    present: true,
-    sale: true,
-  },
 ];
 
+interface PopularProductsProps {
+  className?: string;
+}
+
 export function PopularProducts({ className }: Readonly<PopularProductsProps>) {
-  const slideElements = productSlides.map(product => (
+  const productElements = products.map(product => (
     <ProductCard key={product.id} product={product} />
   ));
 
   return (
     <section className={cn(styles.popularProducts, className)}>
-      <Content>
-        <Slider.Container>
-          {/* <Slider.Button  /> */}
-          {/* <Slider.Button /> */}
+      <Slider.Container>
+        <Content className={styles.popularProducts__topContent}>
+          <SectionTitle>Наши популярные продукты</SectionTitle>
+          <div className={styles.popularProducts__actions}>
+            <Slider.ButtonPrev
+              className={cn(styles.popularProducts__button, styles.popularProducts__button_prev)}
+            />
+            <Slider.ButtonNext
+              className={cn(styles.popularProducts__button, styles.popularProducts__button_next)}
+            />
+          </div>
+        </Content>
+        <Content className={styles.popularProducts__sliderContent}>
           <Slider
+            slides={productElements}
+            swiperConfig={popularProductsSwiperConfig}
             className={styles.popularProducts__slider}
             classSlide={styles.popularProducts__slide}
-            slides={slideElements}
-            swiperConfig={popularProductsSliderConfig}
           />
-        </Slider.Container>
-      </Content>
+        </Content>
+      </Slider.Container>
     </section>
   );
-
-  // const { onNext, onPrev, onSwiper } = useSlider();
-  // return (
-  //   <section className={cn(styles.popularProducts, className)}>
-  //     <Content>
-  //       <div className={styles.popularProducts__top}>
-  //         <SectionTitle>Наши популярные продукты</SectionTitle>
-  //         <div className={styles.popularProducts__actions}>
-  //           <ButtonSlide type="prev" onClick={onPrev} />
-  //           <ButtonSlide type="next" onClick={onNext} />
-  //         </div>
-  //       </div>
-  //     </Content>
-  //     <Slider
-  //       className={styles.popularProducts__slider}
-  //       classSlide={styles.popularProducts__slide}
-  //       slides={productSlides}
-  //       render={slide => <ProductCard key={slide.id} product={slide} />}
-  //       swiperConfig={popularProductsSliderConfig}
-  //       onSwiper={onSwiper}
-  //     />
-  //   </section>
 }

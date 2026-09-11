@@ -1,14 +1,14 @@
 @use '/src/shared/mixins' as *;
 
 .popularProducts {
-  &__top {
+  &__topContent {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     @include media-initial {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.9rem;
     }
     @include media-laptop {
-      justify-content: space-between;
       margin-bottom: 4.8rem;
     }
   }
@@ -18,32 +18,52 @@
     @include media-initial {
       display: none;
     }
-    @include media-desktop {
+    @include media-tablet {
       display: flex;
     }
   }
 
-  &__slider {
-    width: 100%;
-    height: 100%;
-    // max-width: 1272px;
-    // @include media-initial {
-    //   width: calc(100% - 2px);
-    // }
-    // @include media-laptop {
-    //   width: calc(100% - 70px);
-    // }
-    // @include media-desktop {
-    //   width: calc(100% - 168px);
-    // }
+  &__sliderContent {
+    max-width: 1272px;
+    @include media-initial {
+      width: calc(100% - 2px);
+    }
+    @include media-laptop {
+      width: calc(100% - 70px);
+    }
+    @include media-desktop {
+      width: calc(100% - 168px);
+    }
   }
 
   &__slide {
     width: max-content;
-    padding: 15px;
+    padding: 1.5rem;
     transition: opacity var(--time-animate-product-card-fade);
     &:global(:not(.swiper-slide-fully-visible)) {
       opacity: 0.3;
+    }
+  }
+
+  &__button {
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: var(--border-radius-small);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include effect-hover-button-slide;
+    @include effect-focus-outline-main;
+    &:disabled {
+      cursor: default;
+      opacity: 0.2;
+    }
+    &_prev {
+      background-image: url('/icons/popular-products-button-slide-prev.svg');
+    }
+    &_next {
+      background-image: url('/icons/popular-products-button-slide-next.svg');
     }
   }
 }

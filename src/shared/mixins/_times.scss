@@ -3,4 +3,4 @@ $timeAnimateButtonMobileNav: 300ms;
 $timeAnimateCatalogImage: 700ms;
 $timeAnimateMobileNav: 500ms;
 $timeAnimateCatalogNav: 500ms;
-$timeAnimateProductCardFade: 500ms;
+$timeAnimateProductCardFade: 1000ms; // min: 1000ms (>= swiperSpeed)
