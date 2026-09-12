@@ -2,11 +2,12 @@
 
 .catalogNav {
   display: flex;
+  z-index: 2;
   align-items: center;
   justify-content: space-between;
   min-width: 79rem;
   padding: 3.2rem;
-  border-radius: var(--border-radius-regular);
+  border-radius: var(--border-radius-main);
   background-color: var(--color-white);
   box-shadow: 0 0.4rem 1.8rem -0.2rem rgba(0, 0, 0, 0.1);
 
