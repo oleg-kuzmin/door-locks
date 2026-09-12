@@ -1,0 +1,11 @@
+@use '/src/shared/mixins' as *;
+
+.quantity {
+  @include media-initial {
+    @include font-semi-24_34;
+  }
+
+  @include media-desktop {
+    @include font-semi-32_38;
+  }
+}

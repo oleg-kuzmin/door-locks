@@ -1,0 +1,14 @@
+@use '/src/shared/mixins' as *;
+
+.caption {
+  color: var(--color-grey);
+  white-space: nowrap;
+
+  @include media-initial {
+    @include font-14-reg-14_24;
+  }
+
+  @include media-desktop {
+    @include font-16-semi-16_26;
+  }
+}
