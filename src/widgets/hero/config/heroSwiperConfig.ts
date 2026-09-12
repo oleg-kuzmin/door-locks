@@ -1,19 +1,25 @@
 import type { SwiperProps } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
-export const heroSliderConfig: SwiperProps = {
+export const heroSwiperConfig: SwiperProps = {
+  initialSlide: 0,
+  loop: true,
+  modules: [Autoplay],
   slidesPerView: 1,
   spaceBetween: 16,
   speed: 1000,
-  loop: true,
-  initialSlide: 0,
-  modules: [Autoplay],
-  autoplay: false, // todo: prod
+  watchSlidesProgress: true,
+
+  // todo: dev
+  autoplay: false,
+
+  // todo: prod
   // autoplay: {
   //   delay: 5000,
   //   disableOnInteraction: false,
   //   pauseOnMouseEnter: true,
   // },
+
   breakpoints: {
     0: {
       allowTouchMove: true,

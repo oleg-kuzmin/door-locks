@@ -1,8 +1,7 @@
 import cn from 'classnames';
 import { HeroCard, type ObjectHero } from '@/entities/hero-card';
 import { Content, Slider } from '@/shared/ui';
-import { heroSliderConfig } from '../config';
-import { Pagination } from './Pagination/Pagination';
+import { heroSwiperConfig } from '../config';
 import styles from './Hero.module.scss';
 
 const slides: ObjectHero[] = [
@@ -40,27 +39,24 @@ interface HeroProps {
 }
 
 export function Hero({ className }: Readonly<HeroProps>) {
-  const { onNext, onPrev, onSwiper, activeIndex } = useSlider();
-
   const slideElements = slides.map(slide => <HeroCard key={slide.id} card={slide} />);
 
   return (
     <section className={cn(styles.hero, className)}>
-      <Content className={styles.hero__content}>
-        <Slider
-          className={styles.hero__slider}
-          swiperConfig={heroSliderConfig}
-          slides={slideElements}
-          onSwiper={onSwiper}
-        />
-        <Pagination
-          className={styles.hero__pagination}
-          length={slides.length}
-          activeIndex={activeIndex}
-          onNext={onNext}
-          onPrev={onPrev}
-        />
-      </Content>
+      <Slider.Container swiperConfig={heroSwiperConfig}>
+        <Content className={styles.hero__content}>
+          <Slider slides={slideElements} classSlide={styles.hero__slide} />
+          <div className={styles.hero__actions}>
+            <Slider.ButtonPrev className={cn(styles.hero__button, styles.hero__button_prev)} />
+            <Slider.Pagination
+              className={styles.hero__bullets}
+              classBullet={styles.hero__bullet}
+              classBulletActive={styles.hero__bullet_active}
+            />
+            <Slider.ButtonNext className={cn(styles.hero__button, styles.hero__button_next)} />
+          </div>
+        </Content>
+      </Slider.Container>
     </section>
   );
 }

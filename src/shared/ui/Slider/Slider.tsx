@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { SwiperClass, SwiperProps } from 'swiper/react';
+import cn from 'classnames';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,18 +13,24 @@ interface Context {
   onSwiper: (swiper: SwiperClass) => void;
   isBeginning: boolean;
   isEnd: boolean;
+  length: number;
+  activeIndex: number;
+  swiperConfig: SwiperProps;
 }
 
 const SliderContext = createContext<Context>({} as Context);
 
 interface ContainerProps {
+  swiperConfig: SwiperProps;
   children: React.ReactNode;
 }
 
-function Container({ children }: Readonly<ContainerProps>) {
+function Container({ swiperConfig, children }: Readonly<ContainerProps>) {
   const swiperRef = useRef<SwiperClass | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(true);
+  const [length, setLength] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(swiperConfig.initialSlide || 0);
 
   function onNext() {
     if (swiperRef) swiperRef.current?.slideNext();
@@ -37,10 +44,13 @@ function Container({ children }: Readonly<ContainerProps>) {
     swiperRef.current = swiper;
     setIsBeginning(swiperRef.current.isBeginning);
     setIsEnd(swiperRef.current.isEnd);
+    setLength(swiperRef.current.slides.length);
+    setActiveIndex(swiperRef.current.realIndex);
   }
 
   return (
-    <SliderContext value={{ onNext, onPrev, onSwiper, isBeginning, isEnd }}>
+    <SliderContext
+      value={{ onNext, onPrev, onSwiper, isBeginning, isEnd, length, activeIndex, swiperConfig }}>
       {children}
     </SliderContext>
   );
@@ -48,16 +58,20 @@ function Container({ children }: Readonly<ContainerProps>) {
 
 interface SliderProps {
   slides: React.ReactNode[];
-  swiperConfig: SwiperProps;
   className?: string;
   classSlide?: string;
 }
 
-export function Slider({ slides, swiperConfig, className, classSlide }: Readonly<SliderProps>) {
-  const { onSwiper } = useContext(SliderContext);
+export function Slider({ slides, className, classSlide }: Readonly<SliderProps>) {
+  const { swiperConfig, onSwiper } = useContext(SliderContext);
 
   return (
-    <Swiper className={className} onSwiper={onSwiper} onSlideChange={onSwiper} {...swiperConfig}>
+    <Swiper
+      className={className}
+      onSwiper={onSwiper}
+      onSlideChange={onSwiper}
+      style={{ width: '100%' }}
+      {...swiperConfig}>
       {slides.map((slide, index) => (
         <SwiperSlide className={classSlide} key={index}>
           {slide}
@@ -72,15 +86,43 @@ interface ButtonProps {
 }
 
 function ButtonNext({ className }: Readonly<ButtonProps>) {
-  const { onNext, isEnd } = useContext(SliderContext);
-  return <button className={className} onClick={onNext} disabled={isEnd}></button>;
+  const { onNext, isEnd, swiperConfig } = useContext(SliderContext);
+  return (
+    <button className={className} onClick={onNext} disabled={!swiperConfig.loop && isEnd}></button>
+  );
 }
 
 function ButtonPrev({ className }: Readonly<ButtonProps>) {
-  const { onPrev, isBeginning } = useContext(SliderContext);
-  return <button className={className} onClick={onPrev} disabled={isBeginning}></button>;
+  const { onPrev, isBeginning, swiperConfig } = useContext(SliderContext);
+  return (
+    <button
+      className={className}
+      onClick={onPrev}
+      disabled={!swiperConfig.loop && isBeginning}></button>
+  );
+}
+
+interface PaginationProps {
+  className: string;
+  classBullet: string;
+  classBulletActive: string;
+}
+
+function Pagination({ className, classBullet, classBulletActive }: Readonly<PaginationProps>) {
+  const { length, activeIndex } = useContext(SliderContext);
+
+  return (
+    <div className={className}>
+      {Array.from({ length: length }, (_, index) => (
+        <div
+          className={cn(classBullet, { [classBulletActive]: index === activeIndex })}
+          key={index}></div>
+      ))}
+    </div>
+  );
 }
 
 Slider.Container = Container;
 Slider.ButtonNext = ButtonNext;
 Slider.ButtonPrev = ButtonPrev;
+Slider.Pagination = Pagination;

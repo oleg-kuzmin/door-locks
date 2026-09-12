@@ -98,7 +98,7 @@ export function PopularProducts({ className }: Readonly<PopularProductsProps>) {
 
   return (
     <section className={cn(styles.popularProducts, className)}>
-      <Slider.Container>
+      <Slider.Container swiperConfig={popularProductsSwiperConfig}>
         <Content className={styles.popularProducts__topContent}>
           <SectionTitle>Наши популярные продукты</SectionTitle>
           <div className={styles.popularProducts__actions}>
@@ -113,7 +113,6 @@ export function PopularProducts({ className }: Readonly<PopularProductsProps>) {
         <Content className={styles.popularProducts__sliderContent}>
           <Slider
             slides={productElements}
-            swiperConfig={popularProductsSwiperConfig}
             className={styles.popularProducts__slider}
             classSlide={styles.popularProducts__slide}
           />

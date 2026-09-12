@@ -1,1 +1,1 @@
-export { heroSliderConfig } from './heroSliderConfig';
+export { heroSwiperConfig } from './heroSwiperConfig';

@@ -1,12 +1,13 @@
 import type { SwiperProps } from 'swiper/react';
 
 export const popularProductsSwiperConfig: SwiperProps = {
+  centeredSlides: false,
   slidesPerView: 'auto',
   spaceBetween: 0,
   speed: 1000,
   watchSlidesProgress: true,
+
   breakpointsBase: 'container',
-  centeredSlides: false,
   breakpoints: {
     0: {
       slidesPerGroup: 1,

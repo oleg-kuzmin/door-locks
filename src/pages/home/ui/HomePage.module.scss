@@ -2,10 +2,9 @@
 
 .homePage {
   &__hero {
-    padding-top: 1.9rem;
-
+    padding: 1.9rem 0 4rem;
     @include media-desktop {
-      padding-top: 12.3rem;
+      padding: 12.3rem 0 4.8rem;
     }
   }
 
