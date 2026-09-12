@@ -1,0 +1,17 @@
+@use '/src/shared/mixins' as *;
+
+.advantageIcon {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include media-initial {
+    width: 64px;
+    height: 64px;
+  }
+
+  @include media-desktop {
+    width: 82px;
+    height: 82px;
+  }
+}
