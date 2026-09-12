@@ -1,0 +1,28 @@
+@use '/src/shared/mixins' as *;
+
+.statistics {
+  background-color: var(--color-bg-light);
+
+  &__content {
+    max-width: 82.6rem;
+    @include media-initial {
+      padding: 3rem 0;
+    }
+    @include media-desktop {
+      padding: 4rem 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    @include media-initial {
+      justify-content: center;
+      gap: 2.5rem 2rem;
+    }
+    @include media-tablet {
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+}
