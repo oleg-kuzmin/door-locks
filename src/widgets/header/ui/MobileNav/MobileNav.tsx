@@ -64,5 +64,5 @@ function CatalogNavElement({ to, children }: Readonly<NavElementProps>) {
 }
 
 function CatalogArrow() {
-  return <span className={cn(styles.catalogArrow)}></span>;
+  return <span className={cn(styles.catalogArrow)} />;
 }

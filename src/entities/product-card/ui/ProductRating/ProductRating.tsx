@@ -19,7 +19,8 @@ export function ProductRating({
       key={i}
       className={cn(styles.productRating__star, {
         [styles.productRating__star_full]: i + 1 <= ratingTrunc,
-      })}></div>
+      })}
+    />
   ));
 
   return (

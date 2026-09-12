@@ -47,7 +47,8 @@ function CatalogArrow({ isOpen }: Readonly<CatalogArrowProps>) {
     <span
       className={cn(styles.catalogArrow, {
         [styles.catalogArrow_isOpen]: isOpen,
-      })}></span>
+      })}
+    />
   );
 }
 

@@ -13,15 +13,18 @@ export function ButtonMobileNav({ isOpen, onClick, className }: Readonly<ButtonM
       <span
         className={cn(styles.buttonMobileNav__line, {
           [styles.buttonMobileNav__line_active]: isOpen,
-        })}></span>
+        })}
+      />
       <span
         className={cn(styles.buttonMobileNav__line, {
           [styles.buttonMobileNav__line_active]: isOpen,
-        })}></span>
+        })}
+      />
       <span
         className={cn(styles.buttonMobileNav__line, {
           [styles.buttonMobileNav__line_active]: isOpen,
-        })}></span>
+        })}
+      />
     </button>
   );
 }

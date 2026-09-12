@@ -87,18 +87,13 @@ interface ButtonProps {
 
 function ButtonNext({ className }: Readonly<ButtonProps>) {
   const { onNext, isEnd, swiperConfig } = useContext(SliderContext);
-  return (
-    <button className={className} onClick={onNext} disabled={!swiperConfig.loop && isEnd}></button>
-  );
+  return <button className={className} onClick={onNext} disabled={!swiperConfig.loop && isEnd} />;
 }
 
 function ButtonPrev({ className }: Readonly<ButtonProps>) {
   const { onPrev, isBeginning, swiperConfig } = useContext(SliderContext);
   return (
-    <button
-      className={className}
-      onClick={onPrev}
-      disabled={!swiperConfig.loop && isBeginning}></button>
+    <button className={className} onClick={onPrev} disabled={!swiperConfig.loop && isBeginning} />
   );
 }
 
@@ -116,7 +111,8 @@ function Pagination({ className, classBullet, classBulletActive }: Readonly<Pagi
       {Array.from({ length: length }, (_, index) => (
         <div
           className={cn(classBullet, { [classBulletActive]: index === activeIndex })}
-          key={index}></div>
+          key={index}
+        />
       ))}
     </div>
   );
