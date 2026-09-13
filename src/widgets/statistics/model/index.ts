@@ -1,1 +1,1 @@
-export { type ObjectStat } from './types';
+export { type ObjectStat } from './ObjectStat';
