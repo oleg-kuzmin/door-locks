@@ -1,0 +1,13 @@
+@use '/src/shared/mixins' as *;
+
+.categoryTitle {
+  display: inline-block;
+
+  @include media-initial {
+    @include font-14-reg-14_24;
+  }
+
+  @include media-desktop {
+    @include font-sf-pro-text-medium(2.2rem, 1.55);
+  }
+}

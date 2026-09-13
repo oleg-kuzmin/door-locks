@@ -1,4 +1,5 @@
 import { Advantages } from '@/widgets/advantages';
+import { Categories } from '@/widgets/categories';
 import { Header } from '@/widgets/header';
 import { Hero } from '@/widgets/hero';
 import { PopularProducts } from '@/widgets/popular-products';
@@ -12,7 +13,8 @@ export function HomePage() {
       {/* <Hero className={styles.homePage__hero} /> */}
       {/* <PopularProducts className={styles.homePage__popularProducts} /> */}
       {/* <Statistics className={styles.homePage__statistics} /> */}
-      <Advantages />
+      {/* <Advantages /> */}
+      <Categories />
     </>
   );
 }
