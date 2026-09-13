@@ -1,0 +1,22 @@
+@use '/src/shared/mixins' as *;
+
+.advatageElement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2.4rem;
+  @include media-initial {
+    gap: 1.6rem;
+    box-shadow:
+      inset 0 -0.1rem 0 0 var(--color-light-grey),
+      inset 0 0.1rem 0 0 var(--color-light-grey);
+  }
+  @include media-laptop {
+    max-width: 39.3rem;
+    gap: 3.2rem;
+    box-shadow:
+      inset 0.1rem 0 0 0 var(--color-light-grey),
+      inset -0.1rem 0 0 0 var(--color-light-grey);
+  }
+}

@@ -1,5 +1,24 @@
 @use '/src/shared/mixins' as *;
 
 .advantages {
-  
+  &__title {
+    text-align: center;
+    @include media-initial {
+      margin: 4rem 0 2.4rem;
+    }
+    @include media-desktop {
+      margin: 9.3rem 0 5.5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 3rem;
+    @include media-initial {
+      flex-direction: column;
+    }
+    @include media-laptop {
+      flex-direction: row;
+    }
+  }
 }

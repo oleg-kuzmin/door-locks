@@ -1,0 +1,16 @@
+@use '/src/shared/mixins' as *;
+
+.advantageText {
+  color: var(--color-grey);
+  text-align: center;
+
+  @include media-initial {
+    max-width: 28.7rem;
+    @include font-16-semi-16_26;
+  }
+
+  @include media-desktop {
+    max-width: 34.5rem;
+    @include font-20-reg-20_32;
+  }
+}
