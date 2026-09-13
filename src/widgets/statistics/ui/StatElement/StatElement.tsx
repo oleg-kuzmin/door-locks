@@ -1,19 +1,18 @@
 import cn from 'classnames';
-import { Caption } from '../Caption/Caption';
-import { Quantity } from '../Quantity/Quantity';
+import type { ObjectStat } from '../../model';
+import { StatCaption } from '../StatCaption/StatCaption';
+import { StatQuantity } from '../StatQuantity/StatQuantity';
 import styles from './StatElement.module.scss';
 
-interface StatElementProps {
-  quantity: string;
-  caption: string;
+interface StatElementProps extends ObjectStat {
   className?: string;
 }
 
 export function StatElement({ quantity, caption, className }: Readonly<StatElementProps>) {
   return (
     <li className={cn(styles.statElement, className)}>
-      <Quantity>{quantity}</Quantity>
-      <Caption>{caption}</Caption>
+      <StatQuantity>{quantity}</StatQuantity>
+      <StatCaption>{caption}</StatCaption>
     </li>
   );
 }

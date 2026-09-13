@@ -1,6 +1,6 @@
 @use '/src/shared/mixins' as *;
 
-.quantity {
+.statQuantity {
   @include media-initial {
     @include font-semi-24_34;
   }
